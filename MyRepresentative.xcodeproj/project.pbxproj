@@ -13,6 +13,7 @@
 		CFD039701D8E25CF00AE896F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD0396E1D8E25CF00AE896F /* LaunchScreen.storyboard */; };
 		CFD039781D8E266200AE896F /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD039771D8E266200AE896F /* Representative.swift */; };
 		CFD0397A1D8E2A8400AE896F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD039791D8E2A8400AE896F /* NetworkController.swift */; };
+		CFD0397C1D8F866A00AE896F /* RepresentativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0397B1D8F866A00AE896F /* RepresentativeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CFD039711D8E25CF00AE896F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD039771D8E266200AE896F /* Representative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
 		CFD039791D8E2A8400AE896F /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		CFD0397B1D8F866A00AE896F /* RepresentativeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				CFD039691D8E25CF00AE896F /* Main.storyboard */,
 				CFD039771D8E266200AE896F /* Representative.swift */,
 				CFD039791D8E2A8400AE896F /* NetworkController.swift */,
+				CFD0397B1D8F866A00AE896F /* RepresentativeController.swift */,
 				CFD0396C1D8E25CF00AE896F /* Assets.xcassets */,
 				CFD0396E1D8E25CF00AE896F /* LaunchScreen.storyboard */,
 				CFD039711D8E25CF00AE896F /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				CFD039781D8E266200AE896F /* Representative.swift in Sources */,
 				CFD039661D8E25CF00AE896F /* AppDelegate.swift in Sources */,
+				CFD0397C1D8F866A00AE896F /* RepresentativeController.swift in Sources */,
 				CFD0397A1D8E2A8400AE896F /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
