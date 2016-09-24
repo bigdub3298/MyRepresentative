@@ -8,19 +8,21 @@
 
 import UIKit
 
-class RepresentativeTableViewController: UITableViewController {
-
-
+class RepresentativeTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet var statePicker: UIPickerView!
+    @IBOutlet var toolbar: UIToolbar!
+    
+    var repsArray = [Representative]()
+    
+    let statesArray = ["AL","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        stateTextField.inputView = statePicker
+        stateTextField.inputAccessoryView = toolbar 
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,62 +34,52 @@ class RepresentativeTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return repsArray.count 
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("representativeCell", forIndexPath: indexPath) as! RepresentativeTableViewCell
 
-        // Configure the cell...
+        let representative = repsArray[indexPath.row]
+        
+        cell.partyLabel.text = representative.party
+        cell.nameLabel.text = representative.name
+        cell.stateLabel.text = representative.state + " "
+        cell.districtLabel.text = representative.district
+        cell.phoneLabel.text = representative.phone
+        cell.officeLabel.text = representative.office
+        cell.linkLabel.text = representative.link
 
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - Picker View Protocols 
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 49
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return statesArray[row] 
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    // MARK: - Actions
+    
+    @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
+        RepresentativeController.searchRepsByState(statesArray[statePicker.selectedRowInComponent(0)]) { (representative) in
+            self.repsArray = representative
+            
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.tableView.reloadData()
+            })
+        }
+        
+        stateTextField.resignFirstResponder()
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

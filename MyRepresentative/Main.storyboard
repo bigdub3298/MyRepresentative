@@ -14,7 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Hxb-FY-zRR">
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select State" textAlignment="natural" minimumFontSize="17" id="Hxb-FY-zRR">
                             <rect key="frame" x="0.0" y="64" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -221,8 +221,33 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Representative" id="2ah-lu-s5d"/>
+                    <connections>
+                        <outlet property="statePicker" destination="f8y-0I-Otz" id="lPO-Fi-TgV"/>
+                        <outlet property="stateTextField" destination="Hxb-FY-zRR" id="JZx-kF-3Xk"/>
+                        <outlet property="toolbar" destination="iET-Sl-rtf" id="5hK-kV-X6x"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wum-lP-dq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iET-Sl-rtf">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="flexibleSpace" id="oME-9l-NtD"/>
+                        <barButtonItem systemItem="done" id="ADw-gb-mfw">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="xa5-fT-2PC" id="isU-2z-wcY"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <pickerView contentMode="scaleToFill" id="f8y-0I-Otz">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <outlet property="dataSource" destination="xa5-fT-2PC" id="fPz-xp-TOM"/>
+                        <outlet property="delegate" destination="xa5-fT-2PC" id="IhA-V8-fjP"/>
+                    </connections>
+                </pickerView>
             </objects>
             <point key="canvasLocation" x="1375" y="383"/>
         </scene>
