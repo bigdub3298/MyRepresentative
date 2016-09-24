@@ -10,7 +10,7 @@ import UIKit
 
 class RepresentativeController {
 
-    static func searchRepsByState(state: String, completion: (representatives: [Representative]) -> Void) {
+    static func searchRepsByState(state: String, completion: ([Representative]) -> Void) {
         let baseURLString = "http://whoismyrepresentative.com/getall_reps_bystate.php"
         
         let urlParameters = ["state" : state, "output": "json"]
@@ -19,16 +19,16 @@ class RepresentativeController {
             
             if let error = error {
                 print("Error in \(#function) - \(error.localizedDescription)")
-                completion(representatives: [])
+                completion([])
                 return
             } else {
                 guard let data = data,
                 let repsJSON = NetworkController.jsonFromData(data),
-                let repsDict = repsJSON["results"] as? [[String: AnyObject]] else { completion(representatives: []); return }
+                let repsDict = repsJSON["results"] as? [[String: AnyObject]] else { completion([]); return }
                 
                 let reps = repsDict.flatMap { Representative(dictionary: $0) }
                 
-                completion(representatives: reps)
+                completion(reps)
             }
         }
     }

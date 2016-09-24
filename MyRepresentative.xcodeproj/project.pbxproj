@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF53F6071D9340FC00F78FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF53F6061D9340FC00F78FC5 /* Main.storyboard */; };
+		CF84DF811D94CF0300486FF8 /* RepresentativeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84DF801D94CF0300486FF8 /* RepresentativeTableViewCell.swift */; };
+		CFBBF6CF1D94C90D00D27F9F /* RepresentativeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6CE1D94C90D00D27F9F /* RepresentativeTableViewController.swift */; };
 		CFD039661D8E25CF00AE896F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD039651D8E25CF00AE896F /* AppDelegate.swift */; };
-		CFD0396B1D8E25CF00AE896F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD039691D8E25CF00AE896F /* Main.storyboard */; };
 		CFD0396D1D8E25CF00AE896F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD0396C1D8E25CF00AE896F /* Assets.xcassets */; };
 		CFD039701D8E25CF00AE896F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD0396E1D8E25CF00AE896F /* LaunchScreen.storyboard */; };
 		CFD039781D8E266200AE896F /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD039771D8E266200AE896F /* Representative.swift */; };
@@ -17,9 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF53F6061D9340FC00F78FC5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CF84DF801D94CF0300486FF8 /* RepresentativeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeTableViewCell.swift; sourceTree = "<group>"; };
+		CFBBF6CE1D94C90D00D27F9F /* RepresentativeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeTableViewController.swift; sourceTree = "<group>"; };
 		CFD039621D8E25CF00AE896F /* MyRepresentative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRepresentative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD039651D8E25CF00AE896F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFD0396A1D8E25CF00AE896F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFD0396C1D8E25CF00AE896F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD0396F1D8E25CF00AE896F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFD039711D8E25CF00AE896F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,11 +63,13 @@
 			isa = PBXGroup;
 			children = (
 				CFD039651D8E25CF00AE896F /* AppDelegate.swift */,
-				CFD039691D8E25CF00AE896F /* Main.storyboard */,
 				CFD039771D8E266200AE896F /* Representative.swift */,
 				CFD039791D8E2A8400AE896F /* NetworkController.swift */,
 				CFD0397B1D8F866A00AE896F /* RepresentativeController.swift */,
+				CFBBF6CE1D94C90D00D27F9F /* RepresentativeTableViewController.swift */,
+				CF84DF801D94CF0300486FF8 /* RepresentativeTableViewCell.swift */,
 				CFD0396C1D8E25CF00AE896F /* Assets.xcassets */,
+				CF53F6061D9340FC00F78FC5 /* Main.storyboard */,
 				CFD0396E1D8E25CF00AE896F /* LaunchScreen.storyboard */,
 				CFD039711D8E25CF00AE896F /* Info.plist */,
 			);
@@ -102,6 +108,7 @@
 				TargetAttributes = {
 					CFD039611D8E25CF00AE896F = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -128,9 +135,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF53F6071D9340FC00F78FC5 /* Main.storyboard in Resources */,
 				CFD039701D8E25CF00AE896F /* LaunchScreen.storyboard in Resources */,
 				CFD0396D1D8E25CF00AE896F /* Assets.xcassets in Resources */,
-				CFD0396B1D8E25CF00AE896F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBBF6CF1D94C90D00D27F9F /* RepresentativeTableViewController.swift in Sources */,
 				CFD039781D8E266200AE896F /* Representative.swift in Sources */,
+				CF84DF811D94CF0300486FF8 /* RepresentativeTableViewCell.swift in Sources */,
 				CFD039661D8E25CF00AE896F /* AppDelegate.swift in Sources */,
 				CFD0397C1D8F866A00AE896F /* RepresentativeController.swift in Sources */,
 				CFD0397A1D8E2A8400AE896F /* NetworkController.swift in Sources */,
@@ -151,14 +160,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CFD039691D8E25CF00AE896F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CFD0396A1D8E25CF00AE896F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CFD0396E1D8E25CF00AE896F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,6 +262,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldwidemess.MyRepresentative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -272,6 +274,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.worldwidemess.MyRepresentative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -294,6 +297,7 @@
 				CFD039761D8E25CF00AE896F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
